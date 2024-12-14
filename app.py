@@ -10,6 +10,7 @@ connection = pymysql.connect(
     user="root",
     password="PASSWORD",
     database="bank_management",
+    port = 3306,
     cursorclass=pymysql.cursors.DictCursor
 )
 mycursor = connection.cursor()
