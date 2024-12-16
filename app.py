@@ -6,12 +6,12 @@ app = Flask(__name__)
 
 # Database connection
 connection = pymysql.connect(
-    host="localhost",
-    user="root",
-    password="PASSWORD",
-    database="bank_management",
-    port = 3306,
-    cursorclass=pymysql.cursors.DictCursor
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME"),
+        port=int(os.getenv("DB_PORT", 3306)),
+        cursorclass=pymysql.cursors.DictCursor
 )
 mycursor = connection.cursor()
 
